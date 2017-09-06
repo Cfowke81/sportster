@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true
-  validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }, allow_blank: true
-  validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }, allow_blank: true
+  validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }, presence: true
+  validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }, presence: true
 
   has_many :events
   has_many :commits, through: :events
