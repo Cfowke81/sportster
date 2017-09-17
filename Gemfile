@@ -8,6 +8,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 
+group :test do
+  gem 'database_cleaner'
+end
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user creates new account' do
 
-  let!(:user1) { FactoryGirl.create(:user1) }
+  let!(:user1) { FactoryGirl.create(:user) }
 
   scenario 'unauthenticated user visits homepage' do
     visit new_user_session_path
@@ -15,10 +15,12 @@ feature 'user creates new account' do
 
     click_button 'Sign up'
 
-    fill_in 'Username', with: user1.username
-    fill_in 'Email', with: user1.email
-    fill_in 'Password', with: user1.password
-    fill_in 'Password confirmation', with: user1.password
+    fill_in 'Username', with: "testuser2"
+    fill_in 'First name', with: "Rick"
+    fill_in 'Last name', with: "Deckard"
+    fill_in 'Email', with: "testuser2@gmail.com"
+    fill_in 'Password', with: "Changeme"
+    fill_in 'Password confirmation', with: "Changeme"
 
     click_button 'Sign up'
 
