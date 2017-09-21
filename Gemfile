@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'foundation-rails', '~> 6'
 gem 'active_model_serializers'
+gem 'font-awesome-rails'
 
 group :test do
   gem 'database_cleaner'
