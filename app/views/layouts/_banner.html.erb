@@ -1,16 +1,25 @@
 <div class="mobile-nav-bar title-bar">
   <div class="title-bar-left">
-    <button class="menu-icon" type="button"></button>
+    <% if current_user %>
+      <span><i class="fa fa-plus-square-o" aria-hidden="true">Add Event</i></span>
+    <% else %>
+      <span class="title-bar-text"></span>
+    <% end %>
   </div>
   <div class="title-bar-center">
     <% if current_user %>
       <span class="title-bar-text"><%= @user.username %></span>
     <% else %>
       <span class="title-bar-text">Sportster</span>
-    <% end %>   
+    <% end %>
   </div>
   <div class="title-bar-right">
-    <span class="title-bar-text">Actions</span>
-    <span class="title-bar-text"><a href="#"><i class="fa fa-home title-bar-logo"></i></a></span>
+    <% if current_user %>
+      <span class="title-bar-text"> <%= link_to 'Log out', destroy_user_session_path, method: :delete %></span>
+      <span class="title-bar-text"><i class="fa fa-pencil-square"></i></a></span>
+    <% else %>
+      <span class="title-bar-text"> <%= link_to 'Log in', new_user_session_path %></span>
+      <span class="title-bar-text"><i class="fa fa-pencil-square-o"></i></a></span>
+    <% end %>
   </div>
 </div>
