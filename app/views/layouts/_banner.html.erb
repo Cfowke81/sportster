@@ -8,7 +8,7 @@
   </div>
   <div class="title-bar-center">
     <% if current_user %>
-      <span class="title-bar-text"><%= @user.username %></span>
+      <span class="title-bar-text"><%= current_user.username %></span>
     <% else %>
       <span class="title-bar-text">Sportster</span>
     <% end %>

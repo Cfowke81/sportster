@@ -61,13 +61,17 @@ feature 'user creates new account' do
   end
 
   scenario 'user successfully logs out of their account' do
+    visit root_path
+    click_link('Log in')
+
     visit new_user_session_path
-
-    sign_in user1
+    fill_in 'Email', with: user1.email
+    fill_in 'Password', with: user1.password
+    click_button 'Log in'
+    
     visit root_path
-    sign_out user1
-    visit root_path
+    click_link 'Log out'
 
-    expect(page).to have_content("Log in Email")
+    expect(page).to have_content("Signed out successfully.")
   end
 end
