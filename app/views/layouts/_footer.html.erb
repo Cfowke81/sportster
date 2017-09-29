@@ -4,6 +4,6 @@
     <button><i class="fa fa-search" aria-hidden="true">Search</i></button>
     <button><i class="fa fa-map-marker" aria-hidden="true">Events</i></button>
     <button><i class="fa fa-envelope-open-o" aria-hidden="true">Messages</i></button>
-    <button><i class="fa fa-user-circle" aria-hidden="true">Profile</i></button>
+    <button><i class="fa fa-user-circle" aria-hidden="true"><%= link_to 'Profile', user_path(current_user) %></i></button>
   </div>
 </footer>
