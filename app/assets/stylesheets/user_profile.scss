@@ -1,6 +1,34 @@
 $profile-card-about-text-transform: uppercase;
 $profile-card-about-separator-width: 3rem;
 $profile-card-about-separator-thickness: 0.125rem;
+$block-grid-elements: 12;
+$block-grid-default-spacing: rem-calc(20);
+$align-block-grid-to-grid: false;
+
+.featured-image-block-grid-header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-image-block {
+
+  margin-bottom: 20px;
+
+  .featured-image-block-title {
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: #404040;
+  }
+
+  a:hover {
+    p {
+      color: map-get($foundation-palette, primary);
+    }
+  }
+}
 
 .profile-card-action-icons {
   background-color: $white;
@@ -38,16 +66,24 @@ $profile-card-about-separator-thickness: 0.125rem;
         margin-top: 0.3rem;
         padding-bottom: 0;
 
-        .author-title,
-        .author-description {
+        .author-title, {
           margin-bottom: 0;
+        }
+
+        .author-description {
+          margin-bottom: 10;
+        }
+
+        .author-website {
+          margin-bottom: 20;
         }
 
         .author-title {
           color: $black;
         }
 
-        .author-description {
+        .author-description,
+        .author-website {
           color: $dark-gray;
           font-size: 0.9em;
         }

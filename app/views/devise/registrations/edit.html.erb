@@ -8,6 +8,16 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :description %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :description, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :website, autocomplete: "off" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

@@ -25,6 +25,20 @@
   </div>
 
   <div class="field">
+    <%= f.label :description %>
+    <em>(optional)</em>
+    <br />
+    <%= f.text_field :description, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <em>(optional)</em>
+    <br />
+    <%= f.text_field :website, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
