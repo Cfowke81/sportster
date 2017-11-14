@@ -57,18 +57,13 @@ feature 'user creates new account' do
     sign_in user1
     visit root_path
 
-    expect(page).to have_content("#{user1.username}")
+    expect(page).to have_content("#{user1.first_name} #{user1.last_name}")
   end
 
   scenario 'user successfully logs out of their account' do
-    visit root_path
-    click_link('Log in')
-
     visit new_user_session_path
-    fill_in 'Email', with: user1.email
-    fill_in 'Password', with: user1.password
-    click_button 'Log in'
-    
+
+    sign_in user1
     visit root_path
     click_link 'Log out'
 
