@@ -1,7 +1,7 @@
 <div class="mobile-nav-bar title-bar">
   <div class="title-bar-left">
     <% if current_user %>
-      <span><i class="fa fa-plus-square-o" aria-hidden="true">Add Event</i></span>
+      <span><i class="fa fa-plus-square-o" aria-hidden="true"><%= link_to 'Add Event', new_event_path %></i></span>
     <% else %>
       <span class="title-bar-text"></span>
     <% end %>

@@ -1,0 +1,66 @@
+
+
+
+
+
+<section class="contact-us-section">
+  <div class="row medium-unstack">
+    <div class="columns contact-us-section-left">
+      <h1 class="contact-us-header">Create Your Event</h1>
+      <div class="responsive-embed">
+        <h2>Map Feature to be added</h2>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=campbell&zoom=13&scale=false&size=600x300&maptype=roadmap&sensor=false&format=png&visual_refresh=true" alt="Google Map of campbell" alt="" />
+      </div>
+
+      <ul class="contact-us-list">
+        <li class="name">Event name here</li>
+        <li class="address">Event address here</li>
+        <li class="city-state-and-zip">Event city/state/zip here</li>
+        <li class="sport">Sport name here</li>
+        <li class="loc">Event level of competition here</li>
+      </ul>
+    </div>
+      <div class="columns contact-us-section-right">
+        <h1 class="contact-us-header">Add Event</h1>
+        <form class="contact-us-form">
+          <%= form_for(@event) do |f| %>
+          <div class="field">
+            <%= f.label :name, "Event Name:" %>
+            <%= f.text_field :name, class: "event_name", placeholder: "Name (Required)" %>
+          </div>
+          <div class="field">
+            <%= f.label :address, "Event Address:" %>
+            <%= f.text_field :address, class: "event_address", placeholder: "Address (Required)" %>
+          </div>
+          <div class="field">
+            <%= f.label :city, "Event City:" %>
+            <%= f.text_field :city, class: "event_city", placeholder: "City (Required)" %>
+          </div>
+          <div class="field">
+            <%= f.label :state %>
+            <%= f.select(:state, options_for_select(@state_collection)) %>
+          </div>
+          <div class="field">
+            <%= f.label :zip, "Event Zip Code:" %>
+            <%= f.text_field :city, class: "event_zip", placeholder: "Zip Code (Required)" %>
+          </div>
+          <div class="field">
+            <%= f.label :loc, "Event Level of Competition:" %>
+            <%= f.select(:loc, options_for_select(@loc_collection)) %>
+          </div>
+          <div class="field">
+            <%= f.label :sport %>
+            <%= f.select(:sport, options_for_select(@sport_collection)) %>
+          </div>
+          <div class="field">
+            <%= f.label :description, "Event Description:" %>
+            <%= f.text_area :city, class: "event_desc", rows: "12", placeholder: "Description (Optional)" %>
+          </div>
+          <div class="actions">
+            <%= f.submit("Create Event") %>
+          </div>
+        </form>
+      </div>
+    <% end %>
+  </div>
+</section>
